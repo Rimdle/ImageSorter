@@ -35,15 +35,15 @@ namespace Sort
         public Image plusd = Image.FromStream(ass.GetManifestResourceStream("Sort.plus.png"));
         public Image plusdown = Image.FromStream(ass.GetManifestResourceStream("Sort.plusdown.png"));
         public Image plusover = Image.FromStream(ass.GetManifestResourceStream("Sort.plusover.png"));
-        public Label l = new Label();
-        public TextBox t = new TextBox();
+        //public Label l = new Label();
+        //public TextBox t = new TextBox();
         public readonly List<string> ext = new List<string> { ".png", ".bmp", ".jpg", ".jpeg", ".webp" };
         public bool mD;
         public Point lL;
         public Sorter()
         {
             InitializeComponent();
-            t.Text = string.Empty;
+            //t.Text = string.Empty;
             Color back = Color.FromArgb(23, 33, 43);
             Color fore = Color.FromArgb(56, 65, 71);
             DoubleBuffered = true;
