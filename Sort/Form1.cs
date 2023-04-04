@@ -44,8 +44,8 @@ namespace Sort
         {
             InitializeComponent();
             //t.Text = string.Empty;
-            Color back = Color.FromArgb(23, 33, 43);
-            Color fore = Color.FromArgb(56, 65, 71);
+            //Color back = Color.FromArgb(23, 33, 43);
+            //Color fore = Color.FromArgb(56, 65, 71);
             DoubleBuffered = true;
             Visible = true;
             /*mover.MouseDown += mover_MouseDown;
