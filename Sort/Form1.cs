@@ -346,19 +346,7 @@ namespace Sort
             CatFoldersLabel.Image = foldown;
         }
 
-        //
-
-        private void CatFolder_TextChanged(object sender, EventArgs e)
-        {
-            currentDir = CatFolder.Text;
-            CatFoldersLayout.Controls.Clear();
-            LoadF(catFolderPath);
-            Plus.Enabled = true;
-            if (ImgFolder.Text != "Images Folder")
-            {
-                Sort.Enabled = true;
-            }
-        }
+            //Delete Button
 
         private void Del_Click(object sender, EventArgs e)
         {
@@ -370,11 +358,6 @@ namespace Sort
             {
                 MessageBox.Show("No file", "Error");
             }
-        }
-
-        private void Exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void Del_MouseHover(object sender, EventArgs e)
@@ -392,12 +375,31 @@ namespace Sort
             Del.Image = deldown;
         }
 
+            //Exit Button
 
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Exit_MouseHover(object sender, EventArgs e)
+        {
+            Exit.ForeColor= SystemColors.ButtonFace;
+        }
+
+        private void Exit_MouseLeave(object sender, EventArgs e)
+        {
+            Exit.ForeColor = Color.FromArgb(93, 106, 115);
+        }
+
+            //Minimize Button
 
         private void MinimizeBtn_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
+
+            //Plus Button
 
         private void Plus_Click(object sender, EventArgs e)
         {
@@ -444,14 +446,6 @@ namespace Sort
             }
         }
 
-        private void ImgFolder_TextChanged(object sender, EventArgs e)
-        {
-            if (Plus.Enabled)
-            {
-                Sort.Enabled = true;
-            }
-        }
-
         private void Plus_MouseDown(object sender, MouseEventArgs e)
         {
             Plus.Image = plusdown;
@@ -466,6 +460,8 @@ namespace Sort
         {
             Plus.Image = plusd;
         }
+
+            //Window dragging handling
 
         private void Mover_MouseDown(object sender, MouseEventArgs e)
         {
@@ -487,14 +483,26 @@ namespace Sort
             this.Capture = false;
         }
 
-        private void Exit_MouseHover(object sender, EventArgs e)
+            //Buttons Enabling
+
+        private void ImgFolder_TextChanged(object sender, EventArgs e)
         {
-            Exit.ForeColor= SystemColors.ButtonFace;
+            if (Plus.Enabled)
+            {
+                Sort.Enabled = true;
+            }
         }
 
-        private void Exit_MouseLeave(object sender, EventArgs e)
+        private void CatFolder_TextChanged(object sender, EventArgs e)
         {
-            Exit.ForeColor = Color.FromArgb(93, 106, 115);
+            currentDir = CatFolder.Text;
+            CatFoldersLayout.Controls.Clear();
+            LoadF(catFolderPath);
+            Plus.Enabled = true;
+            if (ImgFolder.Text != "Images Folder")
+            {
+                Sort.Enabled = true;
+            }
         }
     }
 }
